@@ -1,0 +1,58 @@
+<section id="footer">
+  <div class="container">
+    <div class="ten columns offset-by-three">
+      <div class="itunes-review">
+        <div class="itunes-stars"></div>
+        <h3>Love the podcast?</h3>
+        <p>The best way to spread the word is to leave us an iTunes review.</p>
+        <a href="https://itunes.apple.com/us/podcast/talking-code/id988073177?mt=2&uo=6&at=&ct=" class="button">Review in iTunes</a>
+      </div>
+      <%= partial 'partials/footer_opt_in' %>
+      <div class="footer-content clearfix">
+        <div class="little-logo"></div>
+        <div class="host">
+          <figure class="avatar">
+            <a href="https://twitter.com/joshsmith">
+              <div class="avatar-base">
+                <img src="<%= processed_image_url(:small, 'avatars/josh.jpg') %>" />
+              </div>
+              <div class="avatar-gif">
+                <img src="/images/bmo.gif" />
+              </div>
+            </a>
+          </figure>
+          <h3>Josh Smith</h3>
+          <p>Consults for startups at <%= partial 'partials/coderly_link'%>.</p>
+          <a class="twitter-follow-button"
+            href="https://twitter.com/joshsmith"
+            data-size="large"
+            data-show-screen-name="false"
+            data-show-count="false">
+          Follow @twitterapi
+          </a>
+        </div>
+        <div class="host">
+          <figure class="avatar">
+            <a href="https://twitter.com/venkatdinavahi">
+              <div class="avatar-base">
+                <img src="<%= processed_image_url(:small, 'avatars/venkat.jpg') %>" />
+              </div>
+              <div class="avatar-gif">
+                <img src="/images/work.gif" />
+              </div>
+            </a>
+          </figure>
+          <h3>Venkat Dinavahi</h3>
+          <p>Consults for startups at <%= partial 'partials/coderly_link'%>.</p>
+          <a class="twitter-follow-button"
+            href="https://twitter.com/venkatdinavahi"
+            data-size="large"
+            data-show-screen-name="false"
+            data-show-count="false">
+          Follow @twitterapi
+          </a>
+        </div>
+      </div>
+    </div><!-- END .sixteen.columns -->
+  </div><!-- END #container -->
+</section><!-- END #footer -->

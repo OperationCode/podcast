@@ -1,0 +1,27 @@
+<header>
+ <div class="container">
+   <div class="inner">
+     <div class="row intro">
+       <div class="col-md-6 col-sm-6 fadeInLeft animated ebook-cover">
+         <img class="img-responsive" src="<%= ebook_image %>" alt="book cover">
+       </div>
+       <div class="col-md-6 col-sm-6 intro-body fadeInRight animated">
+         <h2><%= intro_heading %> <%= intro_subheading %></h2>
+         <% intro_text_paragraphs.each do |paragraph| %>
+            <p class="intro-text">
+              <%= paragraph %>
+            </p>
+         <% end %>
+         <div class="spacer-25px"></div>
+         <form class="toolbox-subscription-form" action="<%= mailchimp_post_url %>" data-source="ebook-form-big" data-group="<%= email_group %>">
+           <div class="form-group">
+             <input type="email" class="form-control input-lg" placeholder="Enter your email here" name="email">
+             <label for="email" ></label>
+           </div>
+           <button type="submit" class="btn btn-1 btn-lg">Download Now</button>
+         </form>
+         <div class="spacer-25px"></div>
+       </div>
+     </div>
+   </div>
+ </header>

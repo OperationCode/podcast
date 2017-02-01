@@ -1,0 +1,91 @@
+<% upcoming_class = episode.data.upcoming ? "is-upcoming" : "" %>
+
+<% content_for :scripts do %>
+  <script type="text/javascript">
+  $('.simplecast-player').css({'background-image': 'linear-gradient(to right, #0782bb, #12a07c);'});
+  </script>
+  
+  <script type="text/javascript">
+    window.episodeTitle = "<%= episode.data.title %>";
+    window.episodeId =  "<%= episode.slug %>";
+  </script>
+<% end %>
+
+<div class="podcast <%= upcoming_class %>">
+
+  <div class="podcast-header">
+    <div class="podcast-photo">
+      <img src="<%= avatar_url_large(episode) %>">
+    </div>
+    <h1><%= episode.data.title %></h1>
+
+    <%= format_guest_name(episode) %>
+
+    <% if episode.data.upcoming == true %> <span class="date">| Upcoming</span><% end %></p>
+  </div>
+
+  <% if episode.data.upcoming == true %>
+    <div class="podcast-upcoming">
+      <p>This episode will be released soon!</p>
+      <p>Enter your email below and we'll let you know when it's ready to go!</p>
+    </div>
+    <div class="sixteen columns">
+      <div class="email-subscription is-on-white-background clearfix">
+        <form class="email-subscription-form" action="//talkingcode.us10.list-manage.com/subscribe/post?u=4574458db1d8a11bc93d8ff61&amp;id=a8516572a3" method="post" id="mc-embedded-subscribe-form" name="mc-episode-embedded-subscribe-form" class="validate" target="_blank" data-source="episode_form" novalidate>
+          <input id="mc-email" type="email" value="" name="EMAIL" class="required email input" id="mce-EMAIL" placeholder="you@email.com">
+          <button>Keep me updated!</button>
+          <label for="EMAIL" class="response"></label>
+        </form>
+      </div>
+    </div>
+  <% else %>
+    <div class="listen">
+      <div class="player">
+        <%= partial 'partials/player', locals: { duration: episode.data.duration, download_url: episode.data.download_url } %>
+      </div>
+    </div>
+    <div class="podcast-summary">
+      <p><%= episode.data.summary %></p>
+    </div>
+    <div class="podcast-download-options">
+      <a class="mp3" href="<%= episode.data.download_url %>">Download MP3</a>
+      <a class="itunes" href="https://itunes.apple.com/us/podcast/talking-code/id988073177?mt=2&uo=6&at=&ct=">Listen on iTunes</a>
+    </div>
+    <div class="podcast-details container">
+      <div class="six columns">
+        <div class="podcast-questions">
+          <% if episode.data.questions %>
+          <ul>
+            <li>Here's what to listen for:</li>
+            <% episode.data.questions.each do |question| %>
+              <li><a class="episode-timestamp" href="#<%= question.timestamp%>"><span><i class="icon timestamp-icon"></i> <%= question.timestamp %></span></a> <%= question.question %></li>
+              <%= partial 'partials/timestamp_tweet', locals: {episode_url: episode.url, timestamp: question.timestamp, text: question.question} %>
+            <% end %>
+          </ul>
+          <% end %>
+        </div><!-- END .show_notes -->
+        <div class="podcast-notes">
+          <ul>
+            <% episode.data.links.each do |link| %>
+              <li><a href="<%= link.url %>"><%= link.label %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="eight columns offset-by-one">
+        <div class="tweetables">
+          <% episode.data.tweetables.each do |tweetable| %>
+            <blockquote class="tweetable">
+              <p>
+                "<%= tweetable.quote %>"
+              </p>
+              <div class="tweet-button">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://talkingcode.com<%= episode.url %>?utm_source=twitter&utm_medium=quote_tweet_button&utm_campaign=website" data-text="<%= tweetable.tweet %>" data-count="none" data-size="large">Tweet</a>
+              </div>
+            </blockquote>
+          <% end %>
+        </div><!-- END .tweetables -->
+      </div>
+    </div><!-- END .podcast_details -->
+  <% end %>
+</div><!-- END .podcast -->

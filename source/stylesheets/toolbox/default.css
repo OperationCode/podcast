@@ -1,0 +1,330 @@
+/*----------
+Name: Ryle
+Description: eBook Responsive Bootstrap 3 Landing Page
+Version: 1.0
+Author: Theme4Less.com
+----------*/
+
+/*---------- General ----------*/
+body {
+  font-size: 18px;
+  background-color: #fafafa;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+.social li > a,
+.social img {
+    margin: 0;
+    padding: 0;
+}
+.social-icon {
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    font-size: 18px;
+    height: 40px;
+    width: 40px;
+    padding: 6px;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.social-icon:hover,
+.social-icon:focus {
+    background-color: #777;
+}
+.item-box-icon {
+    float: left;
+    margin-top: 25px;
+    margin-right: 20px;
+}
+.item-box-body {
+    overflow: hidden;
+}
+.btn-1 {
+    background-color: #5FBBED;
+    border-bottom: 5px solid #3A9BD9;
+    color: #fff;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.btn-1:hover,
+.btn-1:focus {
+    background-color: #d8b00d;
+    border-color: #a8890a;
+    color: #fff;
+}
+.btn-2 {
+    background-color: #3e4c81;
+    border-bottom: 5px solid #313c67;
+    color: #fff;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.btn-2:hover,
+.btn-2:focus {
+    background-color: #374474;
+    border-color: #2b355a;
+    color: #fff;
+}
+.btn-3 {
+    background-color: #2ecc71;
+    border-bottom: 5px solid #24a35a;
+    color: #fff;
+    transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.btn-3:hover,
+.btn-3:focus {
+    background-color: #29b765;
+    border-color: #208e4f;
+    color: #fff;
+}
+.btn-wide {
+    margin-top: 15px;
+    width: 350px;
+}
+
+/*---------- Header ----------*/
+header {
+    color: #333;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.intro {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.intro-body {
+    padding-top: 10%;
+    word-spacing: 1px;
+}
+.intro-heading,
+.intro h2 {
+    font-weight: bold;
+    font-size: 22px;
+}
+.pricing {
+    padding: 20px;
+}
+.pricing-body {
+    font-size: 14px;
+    background-color: #eee;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 10px 20px;
+    min-height: 50px!important;
+}
+.pricing-body-bottom {
+    font-size: 14px;
+    background-color: #999;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 20px;
+    min-height: 50px!important;
+}
+
+/*---------- Sections ----------*/
+#social,
+#preview,
+#author,
+#testimonials,
+#other-titles,
+#summary,
+#newsletter,
+#video {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.section {
+    background-color: #fff;
+}
+.section-colored {
+    background-color: #fafafa;
+}
+.section-heading {
+    font-weight: 300;
+}
+.section-icon {
+    background-color: #eee;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    padding-top: 25px;
+    height: 80px;
+    width: 80px;
+}
+.section-item {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.section-separator {
+    background-color: #ddd;
+    height: 2px;
+    width: 100px;
+}
+#summary {
+    background-color: #eee;
+    color: #333;
+}
+.summary-body {
+    background-color: #ddd;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding: 20px;
+}
+.reviews-single {
+    display: inline-block;
+}
+.reviews-single p {
+    display: none;
+}
+.reviews-single-image {
+    display: inline-block;
+    width: 60px;
+    margin: 0 5px 10px 5px;
+}
+.reviews-single-image img {
+    width: 100%;
+    opacity: 0.5;
+    cursor: pointer;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+.reviews-active {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+.reviews-quote {
+    font-family: Georgia, serif;
+    font-size: 70px;
+    line-height: 70px;
+    color: #ccc;
+}
+
+/*---------- Section: Other Titles ----------*/
+#owl-demo .item {
+    margin: 3px;
+}
+#owl-demo .item img {
+    display: block;
+    width: 200px;
+    height: auto;
+}
+.customNavigation   {
+    text-align: center;
+}
+.customNavigation a {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: #eee;
+    font-size: 36px;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+
+/*---------- Footer  ----------*/
+footer {
+    background-color: #fafafa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+.footer-content {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+/*---------- Misc ----------*/
+.lead {
+    font-weight: 300;
+}
+.padding-20px {
+    padding: 20px;
+}
+.spacer-25px {
+    height: 25px;
+}
+.spacer-50px {
+    height: 50px;
+}
+.text-small {
+    font-size: 12px;
+    padding-top: 10px;
+}
+.text-legal {
+    float: right;
+}
+.js-video {
+    height: 0;
+    padding-top: 25px;
+    padding-bottom: 67.5%;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.js-video.widescreen {
+    padding-bottom: 57.25%;
+}
+.js-video.vimeo {
+    padding-top: 0;
+}
+.js-video embed, .js-video iframe, .js-video object, .js-video video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.ebook-cover img {
+  float:right;
+}
+
+.toolbox-subscription-form .form-group{
+  margin-bottom: 0px;
+}
+
+.toolbox-subscription-form label{
+  margin-top: 5px;
+}
+
+
+/*---------- Media Queries ----------*/
+@media (min-width: 1200px) {
+    .container {
+        width: 980px;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    .text-legal {
+        float: left;
+    }
+    .btn-wide {
+        width: 200px;
+    }
+}

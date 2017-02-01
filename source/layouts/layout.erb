@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="//cdn.optimizely.com/js/2718950202.js"></script>
+
+    <meta charset="utf-8">
+
+    <!-- RSS Feed -->
+    <link href="http://simplecast.fm/podcasts/150/rss" rel="alternate" title="The Talking Code Podcast RSS" type="application/rss+xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title || "Talking Code - Learn to speak developer." %></title>
+
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/ed89cf4f-98a8-44a9-952d-0a4ab827449d.css"/>
+
+    <%= partial 'partials/website_og_tags' %>    
+
+    <%= stylesheet_link_tag "application" %>
+    <!-- this should be only loaded on specs -->
+  </head>
+
+  <body class="<%= page_classes %>">
+    <%= partial 'partials/navigation' %>
+
+    <%= yield %>
+
+    <%= partial 'partials/footer' %>
+    <%= partial 'partials/perfect_audience' %>
+
+    <%= partial 'partials/segment' %>
+    <%= javascript_include_tag  "application" %>
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/ed89cf4f-98a8-44a9-952d-0a4ab827449d.js"></script>
+    
+
+    <!-- Twitter -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+    </script>
+  </body>
+</html>

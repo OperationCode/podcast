@@ -1,0 +1,9 @@
+- name: toolbox
+  title: The Dev Toolbox
+  intro_heading: The Dev Toolbox.
+  intro_subheading: Equip your dev team with state of the art tools
+  ebook_image: /images/toolbox/dev_toolbox.png
+  intro_text_paragraphs:
+    - "The software landscape has dramatically changed in the past five years. The tools of today allow your team to build reliable software more quickly."
+  mailchimp_post_url: //talkingcode.us10.list-manage.com/subscribe/post?u=4574458db1d8a11bc93d8ff61&amp;id=4b4749586f
+  email_group: dev_toolbox

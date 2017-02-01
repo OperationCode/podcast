@@ -1,0 +1,34 @@
+body {
+    border-top: 5px solid #16a085;
+}
+header {
+    background-color: #1abc9c;
+    color: #fff;
+}
+.section-icon {
+    background-color: #1abc9c;
+    color: #fff;
+}
+#summary {
+    background-color: #1abc9c;
+    color: #fff;
+}
+.section-colored {
+    background-color: #e8f8f5;
+}
+.summary-body {
+    background-color: #16a085;
+}
+.pricing-body {
+    background-color: #16a085;
+}
+.pricing-body-bottom {
+    background-color: #14967c;
+}
+footer {
+    background-color: #16a085;
+    color: #fff;
+}
+.color-fff {
+    color: #fff;
+}

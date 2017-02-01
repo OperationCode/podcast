@@ -1,0 +1,42 @@
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+</script>
+
+<section id="podcasts_banner">
+  <div id="podcasts" class="container">
+    <section id="podcast_list" class="sixteen columns">
+      <% blog('podcast').articles.select {|a| a.data[:upcoming] == false }.each_with_index do |episode, index| %>
+        <% upcoming_class = episode.data.upcoming ? "is-upcoming" : "" %>
+        <div class="podcast-item clearfix <%= upcoming_class %>">
+          <div class="podcast-item-photo">
+            <a href="<%= episode.url %>"><img src="<%= avatar_url_small(episode) %>"></a>
+          </div>
+          <div class="podcast-item-content">
+            <h3><%= link_to "#{episode.data.title}", episode.url %></h3>
+            <p>
+              <a href="<%= episode.url %>">
+                <%= format_guest_name(episode) %>
+              </a>
+            </p>
+          </div>
+        </div><!-- END .podcast -->
+      <% end %>
+      <% blog('podcast').articles.select {|a| a.data[:upcoming] == true }.each_with_index do |episode, index| %>
+        <% upcoming_class = episode.data.upcoming ? "is-upcoming" : "" %>
+        <div class="podcast-item clearfix <%= upcoming_class %>">
+          <div class="podcast-item-photo">
+            <a href="<%= episode.url %>"><img src="/images/<%= episode.data.avatar_small %>"></a>
+          </div>
+          <div class="podcast-item-content">
+            <h3><%= link_to "#{episode.data.title}", episode.url %></h3>
+            <p>
+              <a href="<%= episode.url %>">
+                <%= format_guest_name(episode) %> | Upcoming
+              </a>
+            </p>
+          </div>
+        </div><!-- END .podcast -->
+      <% end %>
+    </section><!-- END #podcast_list.eleven.columns -->
+  </div><!-- END #podcasts.container -->
+</section><!-- END #podcasts_banner -->

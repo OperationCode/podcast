@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="//cdn.optimizely.com/js/2718950202.js"></script>
+
+    <meta charset="utf-8">
+
+    <!-- RSS Feed -->
+    <link href="http://simplecast.fm/podcasts/150/rss" rel="alternate" title="The Talking Code Podcast RSS" type="application/rss+xml" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title><%= current_page.data.title %> | Talking Code Podcast</title>
+
+    <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/ed89cf4f-98a8-44a9-952d-0a4ab827449d.css"/>
+    <%= stylesheet_link_tag "simplecast" %>
+
+    <%= stylesheet_link_tag "application" %>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@talking_code">
+    <meta name="twitter:creator" content="@<%= current_page.data.twitter_url.split('/').last rescue '' %>">
+    <meta name="twitter:title" content="<%= current_page.data.title %>">
+    <meta name="twitter:description" content="<%= strip_tags(current_page.data.summary) %>">
+    <meta name="twitter:image:src" content="http://talkingcode.com/images/twitter_cards/<%= current_page.data.name.parameterize %>.png">
+    <%= partial 'partials/episode_og_tags', locals: {episode: current_page} %>
+
+  </head>
+
+  <body class="<%= page_classes %>">
+
+    <%= partial 'partials/navigation' %>    
+    <!-- For Tweet buttons -->
+
+    <section id="podcasts_banner">
+      <div id="podcasts" class="container">
+
+        <section id="podcast_detail" class="sixteen columns">
+          <%= partial 'partials/episode', locals: {episode: current_page} %>
+        </section>
+
+      </div>
+    </section>
+
+    <%= partial 'partials/footer' %>
+    <%= partial 'partials/perfect_audience' %>
+
+    <%= partial 'partials/segment' %>
+    <%= javascript_include_tag  "application" %>
+    <script type="text/javascript" src="http://fast.fonts.net/jsapi/ed89cf4f-98a8-44a9-952d-0a4ab827449d.js"></script>
+    <%= yield_content :scripts %>
+    <%= javascript_include_tag  "podcast_analytics" %>
+    <%= javascript_include_tag  "episode" %>
+    <%= javascript_include_tag  "simplecast" %>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </body>
+</html>
